@@ -1,0 +1,49 @@
+---
+
+- name: Create partition
+  parted:
+    device: /dev/sdb
+    number: 1
+    flags: [ lvm ]
+    state: present
+
+- name: Create resize a volume group on top of /dev/sdb
+  lvg:
+    vg: GITTREND
+    pvs: /dev/sdb1
+
+- name: Create a logical volume of 100% free with disk /dev/sdb1
+  lvol:
+    vg: GITTREND
+    lv: data
+    size: 100%VG
+
+- name: Create a xfs filesystem on /dev/mapper/GITTREND-data
+  filesystem:
+    fstype: xfs
+    dev: /dev/mapper/GITTREND-data
+    force: yes
+
+
+- name: Create directory of GITTREND data
+  file:
+    path: /GIT-TREND
+    state: directory
+    mode: 0755
+
+- name: Mount up device by GITTREND data
+  mount:
+    path: /GIT-TREND
+    src: /dev/mapper/GITTREND-data
+    fstype: xfs
+    state: mounted
+  register: GITTRENDdata
+
+- name: Change permission after mounted
+  file:
+    path: /GIT-TREND
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  when: GITTRENDdata.changed
