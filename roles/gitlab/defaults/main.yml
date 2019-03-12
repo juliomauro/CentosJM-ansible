@@ -22,9 +22,9 @@ gitlab_ldap_host: "172.16.21.242"
 gitlab_ldap_port: "389"
 gitlab_ldap_uid: "sAMAccountName"
 gitlab_ldap_method: "plain"
-gitlab_ldap_bind_dn: "CN=svntrend,CN=Users,DC=trendfeiras,DC=com,DC=br"
+gitlab_ldap_bind_dn: "CN=svntrend,CN=Users,DC=oruam.cloud,DC=com,DC=br"
 gitlab_ldap_password: "V.Jf*9QB"
-gitlab_ldap_base: "DC=trendfeiras,DC=com,DC=br"
+gitlab_ldap_base: "DC=oruam.cloud,DC=com,DC=br"
 
 # SMTP Configuration 
 gitlab_smtp_enable: "true"
