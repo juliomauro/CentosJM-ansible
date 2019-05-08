@@ -4,19 +4,19 @@
   roles:
 # SISTEMA
     # - hostname 
-    # - update 
-    # - common
+    - update 
+    - common
     # - sudo
     # - LVM
-    # - firewall_selinux
+    - firewall_selinux
     # - limits
     # - kernel4
-    # - reboot
-    # - history
+    - reboot
+    - history
     # - diretorio
 # APLICACOES
     # - cloud-tools
-    - gitlab 
+    # - gitlab 
     # - node-trend
     # - dhcpserver
     # - docker-ce
