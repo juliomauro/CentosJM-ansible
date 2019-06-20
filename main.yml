@@ -4,15 +4,16 @@
   roles:
 # SISTEMA
     # - hostname 
-    - update 
-    - common
+    # - update 
+    # - common
     # - sudo
     # - LVM
-    - firewall_selinux
+    # - firewall_selinux
     # - limits
     # - kernel4
-    - reboot
-    - history
+    # - reboot
+    # - history
+    - tcp_sack_disable
     # - diretorio
 # APLICACOES
     # - cloud-tools
