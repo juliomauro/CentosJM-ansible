@@ -13,11 +13,14 @@
     # - kernel4
     # - reboot
     # - history
+<<<<<<< HEAD
     - tcp_sack_disable
+=======
+>>>>>>> parent of 77c0714... Validação GitKraken
     # - diretorio
 # APLICACOES
     # - cloud-tools
-    # - gitlab 
+    - gitlab 
     # - node-trend
     # - dhcpserver
     # - docker-ce
