@@ -1,5 +1,5 @@
 ---
-- hosts: dhcp_servers
+- hosts: movile
   vars:
     kea_dhcp_config: true
     kea_dhcp_dhcp4_config:
@@ -61,7 +61,7 @@
               - output: /var/log/kea-dhcp4.log
             severity: INFO
             debuglevel: 0
-    pri_domain_name: oruam.cloud
+    pri_domain_name: wavy.systems
   roles:
     - role: ansible-kea-dhcp
   tasks:

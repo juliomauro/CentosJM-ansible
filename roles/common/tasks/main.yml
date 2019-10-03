@@ -30,3 +30,5 @@
      - unzip
      - wget
      - yum-utils 
+     - ncdu
+     - iperf3

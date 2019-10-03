@@ -3,24 +3,20 @@
   become: yes
   roles:
 # SISTEMA
-    # - hostname 
-    # - update 
-    # - common
+# - hostname 
+    - update 
+#    - common
     # - sudo
-    # - LVM
-    # - firewall_selinux
+    #- LVM
+    #    - firewall_selinux
     # - limits
     # - kernel4
-    # - reboot
-    # - history
-<<<<<<< HEAD
-    - tcp_sack_disable
-=======
->>>>>>> parent of 77c0714... Validação GitKraken
+    #    - reboot
+    #    - history
     # - diretorio
 # APLICACOES
     # - cloud-tools
-    - gitlab 
+    #- gitlab 
     # - node-trend
     # - dhcpserver
     # - docker-ce

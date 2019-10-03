@@ -9,41 +9,41 @@
 
 - name: Create resize a volume group on top of /dev/sdb
   lvg:
-    vg: GITTREND
+    vg: movile
     pvs: /dev/sdb1
 
 - name: Create a logical volume of 100% free with disk /dev/sdb1
   lvol:
-    vg: GITTREND
-    lv: data
+    vg: movile
+    lv: disk
     size: 100%VG
 
-- name: Create a xfs filesystem on /dev/mapper/GITTREND-data
+- name: Create a xfs filesystem on /dev/mapper/movile-disk
   filesystem:
     fstype: xfs
-    dev: /dev/mapper/GITTREND-data
+    dev: /dev/mapper/movile-disk
     force: yes
 
 
-- name: Create directory of GITTREND data
+- name: Create directory of movile disk
   file:
-    path: /GIT-TREND
+    path: /movile
     state: directory
     mode: 0755
 
-- name: Mount up device by GITTREND data
+- name: Mount up device by movile disk
   mount:
-    path: /GIT-TREND
-    src: /dev/mapper/GITTREND-data
+    path: /movile
+    src: /dev/mapper/movile-disk
     fstype: xfs
     state: mounted
-  register: GITTRENDdata
+  register: moviledisk
 
 - name: Change permission after mounted
   file:
-    path: /GIT-TREND
+    path: /movile
     state: directory
     owner: root
     group: root
     mode: 0755
-  when: GITTRENDdata.changed
+  when: moviledisk.changed
